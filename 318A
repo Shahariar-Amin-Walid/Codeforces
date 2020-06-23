@@ -1,0 +1,32 @@
+never give up.
+আমি যখন এই problem first time solve করতে যাই তখন আমার algorithm ছিল এ্মন...
+1-N পয্ন্ত odd number গুলা প্রথমে একটা vector এ push_back করব।তারপর একই range এর even number গুলা একই vector এ push_back করব।
+তারপর সেই vector এর k তম উপাদান খুঁজে বাহির করব।যদি n এর মান ১0^৬ হত তবে এই algorithm সঠিক হত। n এর maximum value 10^12.
+we know,1 integer value takes 4 bytes space of memory,So total(max) memory need is 4*10^12.So needed memory is(4*10^12)/(1024)^2.that is greater
+than 256 megabytes.So the verdict will be "MEMORY LIMIT EXCEEDED".
+তাই নাতুন algotithm খুঁজে বাহির করলাম।নিন্মের কোডে l ্দিয়ে আমি odd number এর সংখ্যা বাহির করেছি।
+আশা করি সবাই code বুঝতে পারবে।না পারলে https://web.facebook.com/shahariar.amin.5473 এই আইডিতে knock দিতে পারেন।
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+ll n,k;
+ 
+int main( )
+{
+	
+	cin>>n>>k;
+	ll l;
+	if(n%2==0){
+		l=n/2;
+	}
+	else{
+		l=n/2;
+		l++;
+	}
+	if(k<=l){
+		  cout<<k * 2 - 1 << endl;
+	}
+	else{
+	     cout<< (k - (n + 1) / 2) * 2 << endl;
+	}
+}
