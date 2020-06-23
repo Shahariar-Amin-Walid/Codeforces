@@ -1,0 +1,38 @@
+We have to take 3 integers as input. 
+n:the number of digits,
+k:the number of digits that can be changed.
+x:the integer (I take it as string)
+we have print the possible lowest integer x,after k operations.each operation change a digit only.X will be lowest if we change the leftmost 
+k digits to '0'.But it is not possible to change the number of digits.for example if x =99999(n=5,k=3),if we print 00099,it will be actually
+99(a two digits number).So we can't put 0 in the x[0] position.We should store 1 to x[0],and next k-1 values with 0.
+never_give_up
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main( )
+{
+	ll n,k;
+	cin>>n>>k;
+	string s;
+    cin>>s;
+    if(n==1 && k==1 )
+    {
+    	cout<<"0"<<endl;
+	}
+	else
+	{
+		for(ll i=0;i<n && k;i++){
+			if(s[i]>'1'&&i==0) {
+				s[i]='1';
+				k--;
+				continue;
+			}
+			if(s[i]>'0'&&i>0) {
+				s[i]='0';
+				k--;
+			}
+			
+		}
+		cout<<s;
+	}
+}
