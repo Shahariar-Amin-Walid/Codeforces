@@ -1,0 +1,38 @@
+//Shahariar
+//never gibe up
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+int main()
+{
+   int a,b,c;
+   cin>>a>>b>>c;
+   int p,q,r;
+   if(a>b && a>c){
+       p=a;
+       if(b>c) q=b,r=c;
+       else q=c,r=b;
+   }
+   else if(b>a && b>c){
+       p=b;
+       if(a>c) q=a,r=c;
+       else q=c,r=a;
+   }
+   else if(c>b && c>a){
+       p=c;
+       if(b>a) q=b,r=a;
+       else q=a,r=b;
+   }
+   if(p<q+r-1) cout<<0<<endl;
+   else cout<<max(0,p-(q+r-1))<<endl;
+   
+}
+   
+   
+   
+   
+   
+   
+   
+   
